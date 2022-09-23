@@ -28,11 +28,13 @@ function drawBBall(basketball) {
         basketball.x + (basketball.d / 4), basketball.y + (basketball.d * Math.sqrt(3) / 4));   // Draw right vertical basketball line
 }
 
+// Create two paddle objects and store them in a collection
 let paddles = [
     {x:  10, y: 200, l: 40, h: 200, color: "#ff0000"},
     {x: 410, y: 200, l: 40, h: 200, color: "#0000ff"}
 ];
 
+// Draw and animate both paddles
 function drawPaddle() {
     background(255);    // Clear the canvas
 
@@ -42,18 +44,59 @@ function drawPaddle() {
         rect(paddles[i].x, paddles[i].y, paddles[i].l, paddles[i].h);
     }
 
+    // Change paddles' positions if the Up Arrow Key is pressed
     if (keyIsDown(UP_ARROW)) {
         paddles[0].y -= 20;
         paddles[1].y += 20;
     }
 
+    // Change paddles' positions if the Down Arrow Key is pressed
     if (keyIsDown(DOWN_ARROW)) {
         paddles[0].y += 20;
         paddles[1].y -= 20;
     }
 }
+
+// Create bouncy ball object
+let bouncyball = {
+    x: 20, y: 20, d: 40, 
+    color: "#04dfef",
+    xBound: 800, yBound: 600,
+    xVel: -5, yVel: -5
+}
+
+// Create function to move bouncy ball
+function rebound(bouncyball) {
+
+    // Change the horizontal direction of the ball if it hits one of the bounds
+    if((bouncyball.x >= (bouncyball.xBound - (bouncyball.d / 2))) ||
+        (bouncyball.x <= (bouncyball.d / 2))) {
+        bouncyball.xVel *= -1;
+    }
+
+    // Change the vertical direction of the ball if it hits one of the bounds
+    if((bouncyball.y >= (bouncyball.yBound - (bouncyball.d / 2))) ||
+        (bouncyball.y <= (bouncyball.d / 2))) {
+        bouncyball.yVel *= -1;
+    }
+
+    bouncyball.x += bouncyball.xVel;    // Move the ball horizontally
+    bouncyball.y += bouncyball.yVel;    // Move the ball vertically
+}
+
+// Draw and animate rebounding bouncy ball
+function drawBouncy(bouncyball) {
+    background(255);    // Clear the canvas
+
+    fill(bouncyball.color);                             // Prepare to paint with bouncy ball's color
+    circle(bouncyball.x, bouncyball.y, bouncyball.d);   // Draw bouncy ball as a circle
+
+    setInterval(rebound(bouncyball), 50);     // Move the bouncy ball via rebound() every 50 milliseconds
+}
+
 // Draw all objects on the canvas
 function draw() {
     drawBBall(basketball);
     drawPaddle();
+    drawBouncy(bouncyball);
 }
