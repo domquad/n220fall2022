@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterms Exercises</title>
+</head>
+<body>
+    <div>UI Navigation Highlighter:
+        <span id="UI_0"></span>
+    </div>
+    <div id="UI_1" onclick="select(1)">&ensp;One</div>
+    <div id="UI_2" onclick="select(2)">&ensp;Two</div>
+    <div id="UI_3" onclick="select(3)">&ensp;Three</div>
+    <div id="UI_4" onclick="select(4)">&ensp;Four</div>
+    <div id="UI_5" onclick="select(5)">&ensp;Five</div>
+    <div id="UI_6" onclick="select(6)">&ensp;Six</div>
+
+    <div><br />Rock, Paper, Scissors (Guard):</div>
+    <div>
+        <span id="Rock"     onclick="play(0)">&ensp;Rock</span>
+        <span id="Paper"    onclick="play(1)">&emsp;Paper</span>
+        <span id="Scissors" onclick="play(2)">&emsp;Scissors</span>
+        <span id="Guard"    onclick="play(3)">&emsp;Guard</span>
+    </div>
+    <div>You Chose
+        <span id="You">Nothing Yet</span>
+    </div>
+    <div>Computer Chose
+        <span id="Computer">Nothing Yet</span>
+    </div>
+    <div>Score:
+        <span id="Score"></span>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
