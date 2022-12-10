@@ -38,35 +38,36 @@
     <br>
     <label for="type">Select your Pokémon's type:</label>
     <select id="type" name="type">
-        <option value="normal">Normal</option>
-        <option value="fire"   style="color:red">Fire</option>
         <option value="water"  style="color:blue">Water</option>
-        <option value="grass"  style="color:green">Grass</option>
-        <option value="electric" style="color:gold">Electric</option>
-        <option value="flying"   style="color:turquoise">Flying</option>
-        <option value="fighting" style="color:orangered">Fighting</option>
-        <option value="rock"   style="color:brown">Rock</option>
-        <option value="ground" style="color:sandybrown">Ground</option>
-        <option value="steel"  style="color:darkgray">Steel</option>
-        <option value="ice"    style="color:darkcyan">Ice</option>
-        <option value="poison" style="color:purple">Poison</option>
-        <option value="bug"    style="color:olive">Bug</option>
-        <option value="psychic" style="color:magenta">Psychic</option>
-        <option value="dark"    style="color:darkslategrey">Dark</option>
-        <option value="ghost"   style="color:blueviolet" >Ghost</option>
-        <option value="dragon"  style="color:navy">Dragon</option>
-        <option value="fairy"   style="color:palevioletred">Fairy</option>
+        <option value="nrm"   data-order="0">Normal</option>
+        <option value="fire"  data-order="1" style="color:red">Fire</option>
+        <option value="wtr"   data-order="2" style="color:blue">Water</option>
+        <option value="grs"   data-order="3" style="color:green">Grass</option>
+        <option value="elec"  data-order="4" style="color:gold">Electric</option>
+        <option value="fly"   data-order="5" style="color:turquoise">Flying</option>
+        <option value="fight" data-order="6" style="color:orangered">Fighting</option>
+        <option value="rock"  data-order="7" style="color:brown">Rock</option>
+        <option value="grnd"  data-order="8" style="color:sandybrown">Ground</option>
+        <option value="stl"   data-order="9" style="color:darkgray">Steel</option>
+        <option value="ice"   data-order="10" style="color:darkcyan">Ice</option>
+        <option value="psn"   data-order="11" style="color:purple">Poison</option>
+        <option value="bug"   data-order="12" style="color:olive">Bug</option>
+        <option value="psy"   data-order="13" style="color:magenta">Psychic</option>
+        <option value="dark"  data-order="14" style="color:darkslategrey">Dark</option>
+        <option value="ghost" data-order="15" style="color:blueviolet" >Ghost</option>
+        <option value="drgn"  data-order="16" style="color:navy">Dragon</option>
+        <option value="fry"   data-order="17" style="color:palevioletred">Fairy</option>
     </select>
     <br>
     <label for="build">Select your Pokémon's build:</label>
     <select id="build" name="build">
-        <option value="strong" style="font-weight:bold">Strong</option>
-        <option value="speedy">*Speedy*</option>
-        <option value="bulky" >[Bulky]</option>
-        <option value="balanced">Balanced</option>
+        <option value="strong"   data-order="0" style="font-weight:bold">Strong</option>
+        <option value="speedy"   data-order="1">*Speedy*</option>
+        <option value="bulky"    data-order="2">[Bulky]</option>
+        <option value="balanced" data-order="3">Balanced</option>
     </select>
     <br><br>
-    <button style="
+    <button id="fight" onclick="battle()" style="
         height: 40px;
         width: 100px;
         margin-left: 150px;
@@ -92,25 +93,25 @@
         <u>Your Pokémon:</u><br>
         Type:&ensp;<span id="user_type"></span><br>
         Current HP:&ensp;<span id="user_hp"></span><br><br>
-        <button id="attack" style="
+        <button id="attack" onclick="attack()" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Attack
         </button>
-        <button id="punch" style="
+        <button id="punch" onclick="punch()" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Punch
         </button>
-        <button id="howl" style="
+        <button id="howl" onclick="howl()" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Howl
         </button>
-        <button id="harden" style="
+        <button id="harden" onclick="harden()" style="
             width: 80px;
             margin-left: 5px;
             float: left">
