@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project: Pokémon Battle!</title>
+</head>
+<body>
+    <h1 style="color:red; text-shadow: -1px 1px black">Pokémon Battle!</h1>
+    <h4>Welcome to Pokémon Battle, the only simplified simulation of an imaginary Pokémon battle anywhere on the Web!
+        Please start by creating a Pokémon from the prompts below, and take them into battle against a randomly generated enemy!
+        After the battle, you can choose to play again with the same Pokémon to try against a different enemy, 
+        or you can create a whole new one!
+        <br><br>
+        The creation process is as follows: first, name your Pokémon!
+        Then, choose that Pokémon's type from the drop down list!
+        Lastly, select a build for your Pokémon's stats! Choose among Strong, Speedy, Bulky, and Balanced!
+        Then click the fight button to initiate the battle!
+        <br><br>
+        Your turn is to reduce the enemy's Hit Points to zero before they can do the same to your Pokémon!
+        The enemy Pokémon's type will be displayed, so be sure to take advantage of type matchups!
+        The Pokémon with highest speed goes first! On your turn, you will be able to select one of four moves!
+        You will alternate turns with the enemy until either of your Pokémon has fainted!
+        <br><br>
+        Have fun!
+    </h4>
+    <p>
+        <u>Moveset:</u><br>
+        Attack: Hit the opposing Pokémon with an attack of the same type as your Pokémon<br>
+        Punch:  Hit the opposing Pokémon with a weaker, typeless attack<br>
+        Howl:   Raise your Pokémon's attack stat<br>
+        Harden: Raise your Pokémon's defense stat<br>        
+    </p>
+    <h4><u>Start:</u></h4>
+    <label for="name">Name your Pokémon:</label>
+    <input id="name" name="name" type="text">
+    <br>
+    <label for="type">Select your Pokémon's type:</label>
+    <select id="type" name="type">
+        <option value="normal">Normal</option>
+        <option value="fire"   style="color:red">Fire</option>
+        <option value="water"  style="color:blue">Water</option>
+        <option value="grass"  style="color:green">Grass</option>
+        <option value="electric" style="color:gold">Electric</option>
+        <option value="flying"   style="color:turquoise">Flying</option>
+        <option value="fighting" style="color:orangered">Fighting</option>
+        <option value="rock"   style="color:brown">Rock</option>
+        <option value="ground" style="color:sandybrown">Ground</option>
+        <option value="steel"  style="color:darkgray">Steel</option>
+        <option value="ice"    style="color:darkcyan">Ice</option>
+        <option value="poison" style="color:purple">Poison</option>
+        <option value="bug"    style="color:olive">Bug</option>
+        <option value="psychic" style="color:magenta">Psychic</option>
+        <option value="dark"    style="color:darkslategrey">Dark</option>
+        <option value="ghost"   style="color:blueviolet" >Ghost</option>
+        <option value="dragon"  style="color:navy">Dragon</option>
+        <option value="fairy"   style="color:palevioletred">Fairy</option>
+    </select>
+    <br>
+    <label for="build">Select your Pokémon's build:</label>
+    <select id="build" name="build">
+        <option value="strong" style="font-weight:bold">Strong</option>
+        <option value="speedy">*Speedy*</option>
+        <option value="bulky" >[Bulky]</option>
+        <option value="balanced">Balanced</option>
+    </select>
+    <br><br>
+    <button style="
+        height: 40px;
+        width: 100px;
+        margin-left: 150px;
+        background-color:blanchedalmond;
+        color:red;
+        font-size: large;
+        font-weight:bold;
+        text-shadow: -1px 1px 0 black">
+        FIGHT!
+    </button>
+    <br>
+    <h3 id="narrator" style="
+        width: 400px;
+        text-align:
+        center;">
+        ed
+    </h3>
+    <div id="player" style="
+        width:  175px;
+        height: 200px;
+        text-align: center;
+        float: left">
+        <u>Your Pokémon:</u><br>
+        Type:&ensp;<span id="user_type"></span><br>
+        Current HP:&ensp;<span id="user_hp"></span><br><br>
+        <button id="attack" style="
+            width: 80px;
+            margin-left: 5px;
+            float: left">
+            Attack
+        </button>
+        <button id="punch" style="
+            width: 80px;
+            margin-left: 5px;
+            float: left">
+            Punch
+        </button>
+        <button id="howl" style="
+            width: 80px;
+            margin-left: 5px;
+            float: left">
+            Howl
+        </button>
+        <button id="harden" style="
+            width: 80px;
+            margin-left: 5px;
+            float: left">
+            Harden
+        </button>
+    </div>
+    <div id="enemy" style="
+        width:  175px;
+        height: 200px;
+        text-align: center;
+        float: left">
+        <u>Enemy Pokémon:</u><br>
+        Type:&ensp;<span id="enemy_type"></span><br>
+        Current HP:&ensp;<span id="enemy_hp"></span>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h3 id="end"></h3>
+</body>
