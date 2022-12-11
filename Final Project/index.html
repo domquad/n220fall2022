@@ -7,6 +7,8 @@
     <title>Final Project: Pokémon Battle!</title>
 </head>
 <body>
+    <script src="app.js"></script>
+
     <h1 style="color:red; text-shadow: -1px 1px black">Pokémon Battle!</h1>
     <h4>Welcome to Pokémon Battle, the only simplified simulation of an imaginary Pokémon battle anywhere on the Web!
         Please start by creating a Pokémon from the prompts below, and take them into battle against a randomly generated enemy!
@@ -92,25 +94,25 @@
         <u>Your Pokémon:</u><br>
         Type:&ensp;<span id="user_type"></span><br>
         Current HP:&ensp;<span id="user_hp"></span><br><br>
-        <button id="attack" onclick="attack()" style="
+        <button id="attack" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Attack
         </button>
-        <button id="punch" onclick="punch()" style="
+        <button id="punch" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Punch
         </button>
-        <button id="howl" onclick="howl()" style="
+        <button id="howl" style="
             width: 80px;
             margin-left: 5px;
             float: left">
             Howl
         </button>
-        <button id="harden" onclick="harden()" style="
+        <button id="harden" style="
             width: 80px;
             margin-left: 5px;
             float: left">
@@ -123,7 +125,7 @@
         text-align: center;
         float: left">
         <u>Enemy Pokémon:</u><br>
-        Type:&ensp;<span id="enemy_type"></span><br>
+        Type:&ensp;<span id="enemy_type">Dark</span><br>
         Current HP:&ensp;<span id="enemy_hp"></span>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br>
