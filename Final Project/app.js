@@ -137,11 +137,11 @@ function battle() {
     createPKMN(name.value, type.value, build.value);
     calcOrder();
     narrator.innerHTML = "Fight!";
-/*
-    attack.addEventListener("click", damage(calcDamage(player_mon.type, enemy_mon.type, player_mon.atk, enemy_mon.def), narrator.innerHTML));
-    punch.addEventListener("click", damage(calcDamage(18, enemy_mon.type, player_mon.atk, enemy_mon.def), narrator.innerHTML));
-    howl.addEventListener("click", howl(narrator.innerHTML));
-    harden.addEventListener("click", harden(narrator.innerHTML));
+
+    attack.addEventListener("click", damage(calcDamage(player.type, goliath.type, player.atk, goliath.def)));
+    punch.addEventListener("click", damage(calcDamage(18, goliath.type, player.atk, goliath.def)));
+    howl.addEventListener("click", use_howl());
+    harden.addEventListener("click", use_harden());
 
     user_type.innerHTML  = types[player.type];
     user_hp.innerHTML    = player.hp;
@@ -150,8 +150,8 @@ function battle() {
 
     while((player.hp >= 0) && (goliath.hp >= 0)) {
         while (your_turn) {
-            displayTurn(your_turn, narrator.innerHTML);
-            user_hp.innerHTML = player.hp;
+            narrator.innerHTML = displayTurn();
+            user_hp.innerHTML  = player.hp;
             nextTurn();
         }
 
@@ -159,16 +159,16 @@ function battle() {
 
         randMove = Math.floor(Math.random() * 10);
         if ((randMove >= 0) && (randMove <= 2)) {
-            damage(calcDamage(goliath.type, player.type, goliath.atk, player.def), narrator.innerHTML);
+            narrator.innerHTML = damage(calcDamage(goliath.type, player.type, goliath.atk, player.def));
         } else if ((randMove >= 3) && (randMove <= 5)) {
-            damage(calcDamage(18, player.type, goliath.atk, player.def), narrator.innerHTML);
+            narrator.innerHTML = damage(calcDamage(18, player.type, goliath.atk, player.def));
         } else if ((randMove == 6) || (randMove == 7)) {
-            use_howl(narrator.innerHTML);
+            narrator.innerHTML = use_howl();
         } else {
-            use_harden(narrator.innerHTML);
+            narrator.innerHTML = use_harden();
         }
-        enemy_hp.innerHTML   = enemy_mon.hp;
+        enemy_hp.innerHTML = goliath.hp;
         nextTurn();
     }
-    end.innerHTML = winner + "Pokémon wins!"; */
+    end.innerHTML = winner + "Pokémon wins!";
 }
